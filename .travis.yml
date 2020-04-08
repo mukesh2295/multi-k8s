@@ -21,3 +21,11 @@ after_success:
   - docker push mukeshsopra/multi-nginx
   - docker push mukeshsopra/multi-server
   - docker push mukeshsopra/multi-worker
+
+  deploy:
+    edge: true
+    provider: elasticbeanstalk
+    app: multi-docker
+    env: multi-docker-env
+    bucket_name: multi-docker #here the path will be added
+    bucket_path: docker-multi
